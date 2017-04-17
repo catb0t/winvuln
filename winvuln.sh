@@ -2,7 +2,7 @@
 # windirs=()
 for dir in /media/*; do
   lwindir="$dir/Windows/System32"
-  if [ -f "$lwindir" ]; then
+  if [ -d "$lwindir" ]; then
     # windirs+=($dir)
     echo "exploiting: $dir"
     (
