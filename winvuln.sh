@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # windirs=()
-for dir in /media/*; do
+for dir in /media/$USER/*; do
   lwindir="$dir/Windows/System32"
   if [ -d "$lwindir" ]; then
     # windirs+=($dir)
